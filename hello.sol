@@ -22,4 +22,11 @@ contract hello {
   function getValue() public view returns (uint tempStored) {
       return temp;
   }
+
+  // If we want to change owner, simply we can define a new function for that.
+  function changeOwner(address newOwner) public {
+      if(owner == msg.sender) {
+          owner = newOwner
+      }
+  }
 }
