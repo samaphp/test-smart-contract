@@ -21,6 +21,10 @@ contract Sample2 {
     Sample1 con;
 
     constructor() public {
+        // If the targeted contract is already deployed in the blockchain.
+        // We have to use add operator.
+        // That's mean we have to copy the address of that contract.
+        // con = Sample1.at('THE_ADDRESS_OF_ALREADY_DEPLOYED_CONTRACT');
         con = new Sample1();
     }
 
