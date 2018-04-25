@@ -20,10 +20,7 @@ contract hello {
 
   // We will get the temp value.
   function getValue() public view returns (uint tempStored) {
-    // Making sure the owner is the same sender before setting the value.
-    if(owner == msg.sender) {
-        temp = tempInput;
-    }
+    return temp;
   }
 
   // If we want to change owner, simply we can define a new function for that.
