@@ -6,6 +6,13 @@ contract hello {
   // Person who will deploy the smart contract he will be the owner of this smart contract.
   address owner;
 
+  // Defining a modifier to check the owner.
+  modifier checkOwner() {
+    if(owner == msg.sender) {
+      _;
+    }
+  }
+
   // Since defining constructors as functions with the same name as the contract is deprecated.
   // We will use sayHello().
   function sayHello() public {
