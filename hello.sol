@@ -29,7 +29,7 @@ contract hello {
   // If we want to change owner, simply we can define a new function for that.
   function changeOwner(address newOwner) public {
       if(owner == msg.sender) {
-          owner = newOwner
+          owner = newOwner;
       }
   }
 }
