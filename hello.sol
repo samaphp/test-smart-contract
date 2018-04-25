@@ -25,6 +25,8 @@ contract hello {
 
   // We will pass a variable from outside.
   function setValue(uint tempInput) public checkOwner {
+    // Firing dataChange event.
+    emit dataChange(msg.sender, temp, tempInput);
     temp = tempInput;
   }
 
