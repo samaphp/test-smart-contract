@@ -6,6 +6,9 @@ contract hello {
   // Person who will deploy the smart contract he will be the owner of this smart contract.
   address owner;
 
+  // Defining event when data has changed.
+  event dataChange(address changedBy, uint oldValue, uint newValue);
+
   // Defining a modifier to check the owner.
   modifier checkOwner() {
     if(owner == msg.sender) {
