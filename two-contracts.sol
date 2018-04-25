@@ -16,3 +16,15 @@ contract Sample1 {
         return temp;
     }
 }
+
+contract Sample2 {
+    Sample1 con;
+
+    constructor() public {
+        con = new Sample1();
+    }
+
+    function getValue() public view returns (uint value) {
+        return con.get();
+    }
+}
