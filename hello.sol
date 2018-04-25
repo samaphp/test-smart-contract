@@ -19,7 +19,7 @@ contract hello {
   }
 
   // We will get the temp value.
-  function getValue() returns (uint tempStored) {
-    return temp;
+  function getValue() public view returns (uint tempStored) {
+      return temp;
   }
 }
