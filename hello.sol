@@ -14,8 +14,11 @@ contract hello {
   }
 
   // We will pass a variable from outside.
-  function setValue(uint tempInput) public {
-    temp = tempInput;
+  function setValue(uint tempInput) public checkOwner {
+    // Making sure the owner is the same sender before setting the value.
+    if(owner == msg.sender) {
+      temp = tempInput;
+    }
   }
 
   // We will get the temp value.
