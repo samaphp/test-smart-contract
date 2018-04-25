@@ -25,10 +25,7 @@ contract hello {
 
   // We will pass a variable from outside.
   function setValue(uint tempInput) public checkOwner {
-    // Making sure the owner is the same sender before setting the value.
-    if(owner == msg.sender) {
-      temp = tempInput;
-    }
+    temp = tempInput;
   }
 
   // We will get the temp value.
@@ -37,9 +34,7 @@ contract hello {
   }
 
   // If we want to change owner, simply we can define a new function for that.
-  function changeOwner(address newOwner) public {
-      if(owner == msg.sender) {
-          owner = newOwner;
-      }
+  function changeOwner(address newOwner) public checkOwner {
+    owner = newOwner;
   }
 }
