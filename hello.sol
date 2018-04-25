@@ -12,4 +12,14 @@ contract hello {
     // msg is a global variable provided by the Solidity.
     owner = msg.sender;
   }
+
+  // We will pass a variable from outside.
+  function setValue(uint tempInput) public {
+    temp = tempInput;
+  }
+
+  // We will get the temp value.
+  function getValue() returns (uint tempStored) {
+    return temp;
+  }
 }
