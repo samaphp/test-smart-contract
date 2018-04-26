@@ -26,6 +26,29 @@
           let toAccount = document.getElementById('to-account').value;
           let amount = document.getElementById('amount').value;
           console.log('amount', amount);
+
+          // Defining 2 test accounts.
+          let account1 = web3.eth.accounts[0];
+          let account2 = web3.eth.accounts[1];
+
+          // Logging the account1 balance.
+          console.log('Account1 balance:', web3.eth.getBalance(account1));
+          console.log('Account2 balance:', web3.eth.getBalance(account2));
+
+          // Making the transaction.
+          web3.eth.sendTransaction({
+            from: fromAccount,
+            to: toAccount,
+            value: web3.toWei(amount, 'ether')
+          }, function (error, result) {
+            if (!error) {
+              console.log('Account1 new balance:', web3.eth.getBalance(account1));
+              console.log('Account2 new balance:', web3.eth.getBalance(account2));
+            }
+            else {
+              console.log('Error:', error);
+            }
+          });
         }, false);
       }
       else {
