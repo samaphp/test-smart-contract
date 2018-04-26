@@ -4,12 +4,32 @@
   </head>
   <body>
     <form>
-
+      <input type="text" placeholder="The value" id="test-value" />
+      <input type="button" value="Write" id="write" />
+      <input type="button" value="Read" id="read" />
       <strong>There is nothing to show here, please view your browser console.</strong>
     </form>
     <script>
       var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
       if (web3.isConnected()) {
+
+        // Writing to the blockchain.
+        document.getElementById('write').addEventListener('click', function() {
+          let testValue = document.getElementById('test-value').value;
+          // setTemp is a function inside our contract.
+          // THIS FUNCTION IS NOT COMPLETED.
+          contractInstance.setTemp.sendTransaction();
+        }, false);
+
+        // Calling the read function.
+        contractInstance.getTemp.call({}, function(error, result) {
+          if (!error) {
+            // SUCCESS.
+          }
+          else {
+            // FAIL.
+          }
+        });
 
       }
       else {
