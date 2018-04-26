@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  </head>
+  <body>
+    <form>
+
+      <strong>There is nothing to show here, please view your browser console.</strong>
+    </form>
+    <script>
+      var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+      if (web3.isConnected()) {
+
+      }
+      else {
+        console.log('Fail to connect to local ganache.');
+      }
+    </script>
+  </body>
+</html>
