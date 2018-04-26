@@ -4,7 +4,10 @@
   </head>
   <body>
     <script>
-
+      const Web3 = require('web3');
+      const web3 = new Web3();
+      const ganache = new web3.providers.HttpProvider('http://localhost:8545');
+      console.log(ganache.isConnected());
     </script>
   </body>
 </html>
