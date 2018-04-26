@@ -3,6 +3,12 @@
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
   </head>
   <body>
+    <form>
+      <input type="text" placeholder="From account" id="from-account" />
+      <input type="text" placeholder="To account" id="to-account" />
+      <input type="text" placeholder="Ether amount" id="amount" />
+      <input type="button" value="Send" id="send">
+    </form>
     <script>
       // const Web3 = require('web3');
       // const web3 = new Web3();
@@ -10,9 +16,17 @@
       var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
       if (web3.isConnected()) {
         // Synchronous call some of https://github.com/ethereum/wiki/wiki/JavaScript-API.
-        console.log('Accounts:', web3.eth.accounts);
-        console.log('Block number:', web3.eth.blockNumber);
-        console.log('Block details:', web3.eth.getBlock[0]);
+        // console.log('Accounts:', web3.eth.accounts);
+        // console.log('Block number:', web3.eth.blockNumber);
+        // console.log('Block details:', web3.eth.getBlock[0]);
+        // console.log('Block :', web3.eth.getBalance(web3.eth.accounts[4].toNumber()));
+
+        document.getElementById('send').addEventListener('click', function() {
+          let fromAccount = document.getElementById('from-account').value;
+          let toAccount = document.getElementById('to-account').value;
+          let amount = document.getElementById('amount').value;
+          console.log('amount', amount);
+        }, false);
       }
       else {
         console.log('Fail to connect to local ganache.');
